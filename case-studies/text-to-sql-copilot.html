@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text-to-SQL Copilot — Mahad Jafri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Mahad <em>Jafri</em></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../assets/resources/resume_ai_engineer.pdf" target="_blank" rel="noopener">Resume ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <a href="../index.html#work" class="cs-back">← Back to work</a>
+
+    <header class="cs-header">
+      <div class="cs-meta">
+        <span class="tag">AI Engineering · Developer Tools</span>
+        <span class="sep">/</span>
+        <span class="year">2024</span>
+      </div>
+      <h1 class="cs-title">Text-to-SQL Copilot for VS Code</h1>
+      <p class="cs-lede">
+        A VS Code extension that translates plain-English prompts into schema-aware, validated SQL — adopted by engineers and analysts across the company as their default way of starting a new query.
+      </p>
+    </header>
+
+    <section class="cs-section">
+      <h2><span class="num">01</span>The problem</h2>
+      <p>
+        Even experienced engineers spent disproportionate time recalling table schemas, join keys, and naming conventions for a sprawling warehouse. New hires felt this more acutely; senior analysts still felt it. The cost was measured in minutes per query, multiplied by thousands of queries a day.
+      </p>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">02</span>The approach</h2>
+      <p>
+        I built a VS Code extension that pairs a natural-language prompt with retrieval over the warehouse catalog. The model sees the prompt, the relevant schema fragments, and recently-used patterns — and emits SQL that's pre-validated against the catalog before reaching the user.
+      </p>
+      <p>
+        The extension feels like Copilot, but for SQL specifically — and unlike a general code assistant, it actually knows what tables exist.
+      </p>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">03</span>What I built</h2>
+      <ul>
+        <li>VS Code extension with inline-completion UX, side-panel chat, and explain-this-query mode</li>
+        <li>Backend retrieval over table metadata, column descriptions, and historic query patterns</li>
+        <li>Pre-flight validator that catches invalid table/column references before the user sees the suggestion</li>
+        <li>Usage telemetry pipeline to measure acceptance rate, edit distance, and saved time</li>
+      </ul>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">04</span>Results</h2>
+      <div class="cs-results">
+        <div class="cs-result">
+          <div class="cs-result-value">100+</div>
+          <div class="cs-result-label">internal engineers and analysts adopted within first quarter</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-value">70%</div>
+          <div class="cs-result-label">acceptance rate on inline suggestions</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-value">~30 min</div>
+          <div class="cs-result-label">saved per user per day, by self-report</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">05</span>Stack</h2>
+      <div class="cs-stack">
+        <span class="chip">TypeScript</span>
+        <span class="chip">VS Code API</span>
+        <span class="chip">Python</span>
+        <span class="chip">FastAPI</span>
+        <span class="chip">OpenAI</span>
+        <span class="chip">pgvector</span>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">06</span>What I learned</h2>
+      <p>
+        Adoption beats accuracy. The version that shipped wasn't the most accurate model I tested — it was the one with the lowest-friction UX. Engineers tolerate a wrong suggestion if dismissing it is one keystroke; they abandon a tool if it interrupts their flow.
+      </p>
+    </section>
+
+    <a href="../index.html#work" class="cs-back" style="margin-bottom: 4rem;">← Back to work</a>
+  </main>
+
+  <footer>© 2026 Mahad Jafri · Built with care, not a CMS.</footer>
+</body>
+</html>

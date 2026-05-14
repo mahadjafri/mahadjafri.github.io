@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conversational Analytics Agent — Mahad Jafri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Mahad <em>Jafri</em></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../assets/resources/resume_ai_engineer.pdf" target="_blank" rel="noopener">Resume ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <a href="../index.html#work" class="cs-back">← Back to work</a>
+
+    <header class="cs-header">
+      <div class="cs-meta">
+        <span class="tag">AI Engineering · LLM Tooling</span>
+        <span class="sep">/</span>
+        <span class="year">2025</span>
+      </div>
+      <h1 class="cs-title">Conversational Analytics Agent</h1>
+      <p class="cs-lede">
+        A natural-language interface over the company's warehouse that lets non-technical stakeholders ask business questions in plain English — replacing most ad-hoc analyst tickets.
+      </p>
+    </header>
+
+    <section class="cs-section">
+      <h2><span class="num">01</span>The problem</h2>
+      <p>
+        Operations, marketing, and finance leaders had urgent questions about live metrics every day, but every question turned into a ticket queued behind a small analytics team. The bottleneck wasn't the data — it was the translation step between business question and SQL.
+      </p>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">02</span>The approach</h2>
+      <p>
+        I built an LLM-orchestrated agent that grounds itself in a curated semantic layer of the warehouse: vetted metrics, joins, and business definitions. Rather than letting the model write arbitrary SQL, the agent composes queries from a constrained set of validated primitives, runs them, interprets results, and follows up with clarifications.
+      </p>
+      <p>
+        Every answer surfaces the underlying query and assumptions, so users can verify before they act on a number.
+      </p>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">03</span>What I built</h2>
+      <ul>
+        <li>Semantic-layer-grounded agent that composes queries from validated metric primitives instead of free-form SQL</li>
+        <li>Retrieval pipeline over metric definitions, dashboards, and historical analyst answers</li>
+        <li>Evaluation harness with held-out business questions, scored on answer correctness and SQL validity</li>
+        <li>Slack and web interfaces for the same backing service</li>
+        <li>Feedback loop where flagged answers feed back into the semantic layer as new validated metrics</li>
+      </ul>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">04</span>Results</h2>
+      <div class="cs-results">
+        <div class="cs-result">
+          <div class="cs-result-value">90%</div>
+          <div class="cs-result-label">reduction in routine analyst request volume</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-value">500+</div>
+          <div class="cs-result-label">internal weekly active users at peak</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-value">&lt;5s</div>
+          <div class="cs-result-label">median time from question to answer</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">05</span>Stack</h2>
+      <div class="cs-stack">
+        <span class="chip">LangChain</span>
+        <span class="chip">OpenAI</span>
+        <span class="chip">Python</span>
+        <span class="chip">FastAPI</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">pgvector</span>
+        <span class="chip">Slack API</span>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">06</span>What I learned</h2>
+      <p>
+        Text-to-SQL works in demos and breaks in production. What actually shipped was text-to-<em>structured-intent</em>, where the model picks from a small library of approved metrics rather than inventing joins. The semantic layer was the product; the LLM was the front door.
+      </p>
+    </section>
+
+    <a href="../index.html#work" class="cs-back" style="margin-bottom: 4rem;">← Back to work</a>
+  </main>
+
+  <footer>© 2026 Mahad Jafri · Built with care, not a CMS.</footer>
+</body>
+</html>

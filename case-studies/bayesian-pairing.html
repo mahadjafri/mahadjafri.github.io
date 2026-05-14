@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bayesian Pairing Models — Mahad Jafri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Mahad <em>Jafri</em></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../assets/resources/resume_ai_engineer.pdf" target="_blank" rel="noopener">Resume ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <a href="../index.html#work" class="cs-back">← Back to work</a>
+
+    <header class="cs-header">
+      <div class="cs-meta">
+        <span class="tag">Data Science · Production ML</span>
+        <span class="sep">/</span>
+        <span class="year">2022–2024</span>
+      </div>
+      <h1 class="cs-title">Bayesian Pairing Models for Contact-Center Routing</h1>
+      <p class="cs-lede">
+        Hierarchical Bayesian models that match incoming customers to the agent most likely to resolve their call well — deployed across telecom clients globally, driving an estimated $20M in incremental revenue.
+      </p>
+    </header>
+
+    <section class="cs-section">
+      <h2><span class="num">01</span>The problem</h2>
+      <p>
+        Contact centers historically routed calls based on availability — first idle agent gets the next caller. The underlying intuition that "some agent-customer pairings just work better" was widely held but rarely modeled. The challenge was estimating those pairing effects from sparse, noisy data: most agent-customer pairs have never occurred.
+      </p>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">02</span>The approach</h2>
+      <p>
+        I built hierarchical Bayesian models that pooled information across customer segments and agent attributes — letting the model make calibrated predictions about pairings it had never seen by borrowing strength from related ones.
+      </p>
+      <p>
+        Posterior distributions, not point estimates, drove the routing decision: pairs with similar expected outcomes but different uncertainty were treated differently, which let the system explore promising-but-unproven pairings without sacrificing short-term outcomes.
+      </p>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">03</span>What I built</h2>
+      <ul>
+        <li>Hierarchical Bayesian model architecture with partial pooling across customer and agent features</li>
+        <li>Production inference service emitting routing recommendations within tight real-time SLAs</li>
+        <li>Counterfactual evaluation framework for A/B-testing pairing strategies against rotation-based controls</li>
+        <li>Client-facing reporting that decomposed lift into pairing-driven vs. baseline effects</li>
+      </ul>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">04</span>Results</h2>
+      <div class="cs-results">
+        <div class="cs-result">
+          <div class="cs-result-value">$20M</div>
+          <div class="cs-result-label">estimated incremental revenue across deployed clients</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-value">3–7%</div>
+          <div class="cs-result-label">lift in primary client KPI vs. random-routing control</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-value">10+</div>
+          <div class="cs-result-label">enterprise telecom deployments globally</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">05</span>Stack</h2>
+      <div class="cs-stack">
+        <span class="chip">Python</span>
+        <span class="chip">PyMC</span>
+        <span class="chip">NumPy</span>
+        <span class="chip">SQL</span>
+        <span class="chip">R</span>
+        <span class="chip">Docker</span>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">06</span>What I learned</h2>
+      <p>
+        Calibration matters more than peak accuracy in routing problems. A model that says "this pairing is great" with high confidence can lock the system into the wrong policy; one that quantifies its uncertainty lets the routing engine balance exploitation with exploration. The Bayesian framing wasn't aesthetic — it was operational.
+      </p>
+    </section>
+
+    <a href="../index.html#work" class="cs-back" style="margin-bottom: 4rem;">← Back to work</a>
+  </main>
+
+  <footer>© 2026 Mahad Jafri · Built with care, not a CMS.</footer>
+</body>
+</html>

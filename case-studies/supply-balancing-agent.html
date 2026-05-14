@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-Time Supply-Balancing Agent — Mahad Jafri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Mahad <em>Jafri</em></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../assets/resources/resume_ai_engineer.pdf" target="_blank" rel="noopener">Resume ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <a href="../index.html#work" class="cs-back">← Back to work</a>
+
+    <header class="cs-header">
+      <div class="cs-meta">
+        <span class="tag">AI Engineering · Agentic Systems</span>
+        <span class="sep">/</span>
+        <span class="year">2025</span>
+      </div>
+      <h1 class="cs-title">Real-Time Supply-Balancing Agent</h1>
+      <p class="cs-lede">
+        A LangGraph-based agent that watches live ride-supply imbalances across a major mobility platform and triggers targeted driver incentives — replacing a rules-based system that was overspending by design.
+      </p>
+    </header>
+
+    <section class="cs-section">
+      <h2><span class="num">01</span>The problem</h2>
+      <p>
+        Ride-hailing supply rarely matches demand evenly across a city. The legacy approach was a hand-tuned rule engine that pushed blanket incentives whenever wait times rose — effective at fixing the symptom, but expensive and slow to adapt to local conditions like weather, events, or shift patterns.
+      </p>
+      <p>
+        The opportunity was a system that could reason about <em>why</em> supply was tight in a specific zone, decide whether an incentive would actually help, and choose the smallest intervention that would close the gap.
+      </p>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">02</span>The approach</h2>
+      <p>
+        I designed a multi-step agent in LangGraph that decomposed the problem into perception, hypothesis, and action stages. The agent ingests a continuous stream of zone-level supply/demand signals, builds a short-horizon forecast, queries contextual signals (weather, calendar events, historic shift patterns), and reasons through candidate interventions before committing.
+      </p>
+      <p>
+        Each decision is logged with the agent's chain of reasoning so ops teams can audit why a campaign was launched and override when needed.
+      </p>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">03</span>What I built</h2>
+      <ul>
+        <li>Stateful LangGraph agent with separate nodes for forecasting, hypothesis generation, intervention selection, and human handoff</li>
+        <li>FastAPI service layer with a feature store for low-latency context retrieval</li>
+        <li>A guardrail layer that bounded incentive spend per zone, per hour, with auto-rollback on anomaly detection</li>
+        <li>An observability dashboard showing every agent decision, its reasoning trace, and the resulting market outcome</li>
+        <li>Evaluation harness for offline backtesting against historic supply events before each model upgrade</li>
+      </ul>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">04</span>Results</h2>
+      <div class="cs-results">
+        <div class="cs-result">
+          <div class="cs-result-value">60%</div>
+          <div class="cs-result-label">reduction in campaign cost vs. legacy rules engine</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-value">3×</div>
+          <div class="cs-result-label">faster response to localized supply shocks</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-value">90%</div>
+          <div class="cs-result-label">of decisions auto-approved without ops intervention</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">05</span>Stack</h2>
+      <div class="cs-stack">
+        <span class="chip">LangGraph</span>
+        <span class="chip">LangChain</span>
+        <span class="chip">OpenAI</span>
+        <span class="chip">Python</span>
+        <span class="chip">FastAPI</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">Redis</span>
+        <span class="chip">Docker</span>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <h2><span class="num">06</span>What I learned</h2>
+      <p>
+        The hardest part of agentic systems isn't getting the agent to reason — it's bounding what it's allowed to do. Most of the engineering time went into guardrails, observability, and rollback paths, not prompts. The lesson I'd carry to the next project: design the failure modes before designing the happy path.
+      </p>
+    </section>
+
+    <a href="../index.html#work" class="cs-back" style="margin-bottom: 4rem;">← Back to work</a>
+
+  </main>
+
+  <footer>
+    © 2026 Mahad Jafri · Built with care, not a CMS.
+  </footer>
+
+</body>
+</html>
