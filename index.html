@@ -326,36 +326,40 @@
               <span class="social-card-label">GitHub</span>
               <span class="social-card-arrow">↗</span>
             </a>
+            <a href="mailto:mahadjafri@gmail.com" class="social-card">
+              <span class="social-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <polyline points="2,4 12,13 22,4"/>
+                </svg>
+              </span>
+              <span class="social-card-label">mahadjafri@gmail.com</span>
+              <span class="social-card-arrow">↗</span>
+            </a>
           </div>
         </div>
 
         <!-- Right: contact form -->
         <div class="contact-right">
-          <form class="contact-form" action="https://formsubmit.co/mahadjafri@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="Portfolio contact from mahadjafri.github.io" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://mahadjafri.github.io/#contact" />
-            <div class="form-row">
-              <div class="form-field">
-                <label for="first_name">First Name <span class="form-required">(required)</span></label>
-                <input id="first_name" type="text" name="first_name" required autocomplete="given-name" />
-              </div>
-              <div class="form-field">
-                <label for="last_name">Last Name <span class="form-required">(required)</span></label>
-                <input id="last_name" type="text" name="last_name" required autocomplete="family-name" />
-              </div>
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+            <input type="hidden" name="subject" value="Portfolio contact — mahadjafri.github.io" />
+            <input type="hidden" name="redirect" value="https://mahadjafri.github.io/#contact" />
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" type="text" name="name" placeholder="Mahad Jafri" required autocomplete="name" />
             </div>
             <div class="form-field">
-              <label for="email">Email Address <span class="form-required">(required)</span></label>
-              <input id="email" type="email" name="email" required autocomplete="email" />
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
             </div>
             <div class="form-field">
-              <label for="subject">Subject <span class="form-required">(required)</span></label>
-              <input id="subject" type="text" name="subject" required />
+              <label for="phone">Phone Number <span class="form-optional">(optional)</span></label>
+              <input id="phone" type="tel" name="phone" placeholder="+1 000 000 0000" autocomplete="tel" />
             </div>
             <div class="form-field">
-              <label for="message">Message <span class="form-required">(required)</span></label>
-              <textarea id="message" name="message" rows="5" required></textarea>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Hello…" required></textarea>
             </div>
             <button type="submit" class="form-submit">Send message <span class="arrow">→</span></button>
           </form>

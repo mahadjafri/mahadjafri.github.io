@@ -512,8 +512,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .social-card:hover .social-card-arrow { opacity: 1; }
 
 /* Contact form */
-.contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.contact-right {
+  background: var(--paper-warm);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 2rem 2rem 2.25rem;
+}
+.contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
 .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
 .form-field label {
   font-size: 0.85rem;
@@ -521,7 +526,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--ink);
   letter-spacing: 0.01em;
 }
-.form-required { font-weight: 400; color: var(--ink-faint); font-size: 0.8rem; }
+.form-optional { font-weight: 400; color: var(--ink-faint); font-size: 0.8rem; }
 .form-field input,
 .form-field textarea {
   font-family: var(--font-body);
@@ -529,32 +534,35 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--ink);
   background: var(--paper);
   border: 1px solid var(--rule);
-  border-radius: 5px;
+  border-radius: 6px;
   padding: 0.65rem 0.85rem;
   transition: border-color 0.2s, box-shadow 0.2s;
   outline: none;
   resize: vertical;
 }
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: var(--ink-faint); }
 .form-field input:focus,
 .form-field textarea:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(200,78,44,0.1);
 }
 .form-submit {
-  align-self: flex-start;
+  width: 100%;
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--paper);
-  background: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: 5px;
-  padding: 0.75rem 1.5rem;
+  background: var(--ink);
+  border: none;
+  border-radius: 6px;
+  padding: 0.85rem 1.5rem;
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.15s;
+  transition: background 0.2s, transform 0.15s;
   letter-spacing: 0.01em;
+  margin-top: 0.25rem;
 }
-.form-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+.form-submit:hover { background: var(--accent); transform: translateY(-1px); }
 .form-submit .arrow { display: inline-block; transition: transform 0.2s; }
 .form-submit:hover .arrow { transform: translateX(3px); }
 
