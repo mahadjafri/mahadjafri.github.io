@@ -341,10 +341,9 @@
 
         <!-- Right: contact form -->
         <div class="contact-right">
-          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <form class="contact-form" id="contact-form">
             <input type="hidden" name="access_key" value="e3e741d3-706e-4cab-bbda-bc7e71c98e1e" />
             <input type="hidden" name="subject" value="Portfolio contact — mahadjafri.github.io" />
-            <input type="hidden" name="redirect" value="https://mahadjafri.github.io/#contact" />
             <div class="form-field">
               <label for="name">Name</label>
               <input id="name" type="text" name="name" placeholder="Mahad Jafri" required autocomplete="name" />
@@ -374,6 +373,7 @@
   </footer>
 
   <script>
+    // Resume dropdown
     const btn = document.querySelector('.resume-btn');
     const menu = document.querySelector('.resume-menu');
     btn.addEventListener('click', (e) => {
@@ -385,6 +385,31 @@
     document.addEventListener('click', () => {
       btn.setAttribute('aria-expanded', 'false');
       menu.classList.remove('open');
+    });
+
+    // Contact form — AJAX submit with inline success state
+    const form = document.getElementById('contact-form');
+    const submitBtn = form.querySelector('.form-submit');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(form),
+        });
+        const data = await res.json();
+        if (data.success) {
+          form.innerHTML = '<div class="form-success"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9,12 11,14 15,10"/></svg><p>Message sent — I\'ll get back to you soon.</p></div>';
+        } else {
+          throw new Error('submission failed');
+        }
+      } catch {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send message →';
+        submitBtn.insertAdjacentHTML('afterend', '<p class="form-error">Something went wrong. Try emailing me directly.</p>');
+      }
     });
   </script>
 </body>

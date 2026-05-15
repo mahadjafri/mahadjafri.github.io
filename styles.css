@@ -565,6 +565,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .form-submit:hover { background: var(--accent); transform: translateY(-1px); }
 .form-submit .arrow { display: inline-block; transition: transform 0.2s; }
 .form-submit:hover .arrow { transform: translateX(3px); }
+.form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.form-success {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.5rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  color: var(--ink);
+  font-size: 1rem;
+}
+.form-success svg { color: #2a9d5c; flex-shrink: 0; }
+.form-error {
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-top: 0.5rem;
+}
 
 @media (max-width: 860px) {
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -713,7 +731,7 @@ footer {
 }
 
 /* ============================================
-   Animations
+ Animations
    ============================================ */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
