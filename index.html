@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231a1a1a'/><text y='72' x='50' text-anchor='middle' font-family='Georgia,serif' font-size='58' font-style='italic' fill='%23ffffff'>M</text></svg>" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -39,10 +40,10 @@
     <div class="container">
       <div class="hero-eyebrow">Senior Analytics Engineer · Toronto</div>
       <h1 class="hero-title">
-        I build <em>AI agents</em> and <em>ML systems</em> that ship to production.
+        I build the systems that turn <em>AI models</em> into products.
       </h1>
       <p class="hero-subtitle">
-        Five-plus years bridging analytics, ML, and AI tooling — most recently leading agentic systems at Careem and production ML at Afiniti. I care about systems that survive contact with real users.
+        Six years bridging data science and production engineering, from Bayesian decision systems at Afiniti to agentic LLM applications at Careem (Uber).
       </p>
       <div class="hero-cta">
         <a href="#work" class="btn btn-primary">See my work <span class="arrow">→</span></a>
@@ -281,7 +282,7 @@
 
       <div class="about-grid">
         <div class="about-portrait">
-          [ photo placeholder ]
+          <img src="assets/resources/headshot.png" alt="Mahad Jafri" />
         </div>
         <div class="about-text">
           <p>
@@ -306,7 +307,7 @@
         <!-- Left: heading + social cards -->
         <div class="contact-left">
           <span class="section-label" style="display:block; margin-bottom: 1.5rem;">05 — Get in touch</span>
-          <h2 class="contact-title">Let's <em>talk</em>.</h2>
+          <h2 class="contact-title">Building <em>AI systems</em>, agent workflows, or production ML infrastructure? Reach out directly.</h2>
           <div class="social-cards">
             <a href="https://linkedin.com/in/mahadjafri" target="_blank" rel="noopener" class="social-card">
               <span class="social-card-icon">
@@ -401,7 +402,7 @@
         });
         const data = await res.json();
         if (data.success) {
-          form.innerHTML = '<div class="form-success"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9,12 11,14 15,10"/></svg><p>Message sent — I\'ll get back to you soon.</p></div>';
+          form.innerHTML = '<div class="form-success"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9,12 11,14 15,10"/></svg><p>Message sent - I\'ll get back to you soon.</p></div>';
         } else {
           throw new Error('submission failed');
         }
