@@ -535,6 +535,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 @media (max-width: 760px) {
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
+.about-portrait-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
 .about-portrait {
   aspect-ratio: 4 / 5;
   background: var(--paper-warm);
@@ -554,18 +559,28 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   object-fit: cover;
   display: block;
 }
+.about-companies {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.25rem;
+  padding-top: 0.25rem;
+}
+.about-companies img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.5);
+  transition: filter 0.2s ease;
+}
+.about-companies img:hover {
+  filter: grayscale(0%) opacity(1);
+}
 .about-text p {
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--ink-soft);
   margin-bottom: 1.25rem;
-}
-.about-text p:first-child {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-style: italic;
-  color: var(--ink);
-  line-height: 1.4;
 }
 .about-text p strong { color: var(--ink); font-weight: 500; }
 
