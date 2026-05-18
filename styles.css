@@ -498,6 +498,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--rule);
 }
+.tools-description {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
 .tools-list {
   display: flex;
   flex-wrap: wrap;
